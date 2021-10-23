@@ -2,9 +2,10 @@ package Ukoly;
 
 public class Ukol5_2 {
         // TODO vytvorte pole o velikosti 10 s nahodnymi cisly 0-10
-        // vytvorte metodu setrid, ktera seradi prvky pole vzestupne
+        // vytvorte metodu setrid, ktera seradi prvky pole vzestupne    // DONE
         // napr: {5, 6, 7 ,3 } -> {3, 5, 6, 7}
-        // muzete vyuzit napr algoritmu bubble sort
+        // muzete vyuzit napr algoritmu bubble sort                     // Created throught bubble sort
+
         static class BubbleSort
         {
             void bubbleSort(int array[])
@@ -32,7 +33,7 @@ public class Ukol5_2 {
             public static void main(String args[])
             {
                 BubbleSort ob = new BubbleSort();
-                int array[] = {5,8 ,17 ,9 ,20 ,30 ,25 ,15 ,18 ,35 };
+                int array[] = {5,8 ,17 ,9 ,20 ,30 ,25 ,15 ,18 ,35,50 };
                 ob.bubbleSort(array);
                 System.out.println("Sorted numbers : ");
                 ob.printArray(array);

@@ -13,6 +13,6 @@ public class Ukol5_1 {
         }
     }
 }
-
+//ZATÍM JEN JEDNO CVIČENÍ DALŠI NEFUNGOVALI MUSÍM OPRAVIT
 
 
