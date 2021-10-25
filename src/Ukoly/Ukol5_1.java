@@ -1,6 +1,18 @@
 package Ukoly;
 
 public class Ukol5_1 {
+    public static boolean vloz(int num, int x, int y, int [][] array) {
+
+        vloz(45, 1, 1, array);
+        if (!(x > array.length || y > array.length || x < 0 || y < 0)) {
+            System.out.println(array[0].length);
+            System.out.println(array.length);
+
+            array[x][y] = num;
+
+            return true;
+        } else return false;
+    }
     public static void main(String[] args) {
         int array[][] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
@@ -13,6 +25,6 @@ public class Ukol5_1 {
         }
     }
 }
-//ZATÍM JEN JEDNO CVIČENÍ DALŠI NEFUNGOVALI MUSÍM OPRAVIT
+
 
 
