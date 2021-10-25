@@ -1,30 +1,49 @@
 package Ukoly;
 
 public class Ukol5_1 {
-    public static boolean vloz(int num, int x, int y, int [][] array) {
+    private boolean insert(int num, int x, int y, int[][] arr) {
+        printArr(arr);
 
-        vloz(45, 1, 1, array);
-        if (!(x > array.length || y > array.length || x < 0 || y < 0)) {
-            System.out.println(array[0].length);
-            System.out.println(array.length);
-
-            array[x][y] = num;
-
+        if (!(x > arr.length || y > arr[0].length || x < 0 || y < 0)) {
+            arr[x][y] = num;
+            printArr(arr);
+            System.out.println(" ");
             return true;
         } else return false;
     }
-    public static void main(String[] args) {
-        int array[][] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
-        System.out.println("Array1: ");
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
-                System.out.print(array[i][j] + "  ");
+
+    private void printArr(int[][] arr) {
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[i].length; j++) {
+                System.out.print(arr[i][j] + "    ");
             }
-            System.out.println("");
+            System.out.println();
+            System.out.println(" ");
         }
     }
+
+    private int[][] initArr(int size) {
+        int[][] arr = new int[size][size];
+        System.out.println(" ");
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length; j++) {
+                arr[i][j] = (i + 1) * (j + 1);
+            }
+        }
+        return arr;
+    }
+
+
+    private Ukol5_1() {
+        int[] arr = new int[]{1, 5, 9, 2, 43, 1, 7, 23};
+
+        int[][] arr2 = initArr(6);
+        printArr(arr2);
+        insert(88, 2, 2, arr2);
+    }
+
+    public static void main(String[] args) {
+        new Ukol5_1 ();
+    }
 }
-
-
-
