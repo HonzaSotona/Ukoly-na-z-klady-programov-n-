@@ -1,37 +1,52 @@
 package Ukoly;
 import java.util.Scanner;
 public class Ukol4 {
-    public static void main(String[] args) {
 
 
 
-        int nahodneCislo = (int) (Math.random() * 100) + 1; // hranice od kud po kud
-        System.out.print("Máš 10 pokusů na to aby jsi zadal číslo od 1 do 100,\nTvoje první číslo: ");
-        int i = 1;
+        private boolean insert(int num, int x, int y, int[][] arr) {
+            printArr(arr);
+
+            if (!(x > arr.length || y > arr[0].length || x < 0 || y < 0)) {
+                arr[x][y] = num;
+                printArr(arr);
+                System.out.println(" ");
+                return true;
+            } else return false;
+        }
 
 
-        while (i != 0){
-            Scanner vstup = new Scanner(System.in);
-            int cislo = vstup.nextInt();
-            if (cislo == nahodneCislo) {
-                System.out.println("Trefil ses na " + i + ". pokus");
-                i = 0;
+        private void printArr(int[][] arr) {
+            for (int i = 0; i < arr.length; i++) {
+                for (int j = 0; j < arr[i].length; j++) {
+                    System.out.print(arr[i][j] + "    ");
+                }
+                System.out.println();
+                System.out.println(" ");
             }
-            if (cislo > nahodneCislo) {
-                System.out.println("Mé číslo je menší");
-                i++;
+        }
+
+        private int[][] initArr(int size) {
+            int[][] arr = new int[size][size];
+            System.out.println(" ");
+            for (int i = 0; i < arr.length; i++) {
+                for (int j = 0; j < arr.length; j++) {
+                    arr[i][j] = (i + 1) * (j + 1);
+                }
             }
-            if (cislo < nahodneCislo) {
-                System.out.println("Mé číslo je větší");
-                i++;
-            }
-            if (i == 10  ){
-                System.out.println("Použil jsi všechny své pokusy, takže prohráváš."); break;
+            return arr;
+        }
 
 
-            }
+        private Ukol4() {
+            int[] arr = new int[]{1, 5, 9, 2, 43, 1, 7, 23};
 
+            int[][] arr2 = initArr(6);
+            printArr(arr2);
+            insert(88, 2, 2, arr2);
+        }
 
+        public static void main(String[] args) {
+            new Ukol4 ();
         }
     }
-}
